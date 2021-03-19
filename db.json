@@ -1,0 +1,39 @@
+{
+  "tasks": [
+    {
+      "text": "Kup książki",
+      "date": "2021-03-24",
+      "textArea": "Kup Małe wielkie odkrycia. Najważniejsze wynalazki, które odmieniły świat",
+      "priority": false,
+      "id": 5
+    },
+    {
+      "text": "sss",
+      "date": "2021-03-13",
+      "textArea": "n",
+      "priority": true,
+      "id": 8
+    },
+    {
+      "text": "sss",
+      "date": "2021-03-06",
+      "textArea": "mm",
+      "priority": true,
+      "id": 9
+    },
+    {
+      "text": "xzxzx",
+      "date": "2021-03-05",
+      "textArea": "kjkxjc",
+      "priority": true,
+      "id": 10
+    },
+    {
+      "text": "kmjkjk",
+      "date": "2021-03-20",
+      "textArea": ",mnknk",
+      "priority": false,
+      "id": 11
+    }
+  ]
+}
