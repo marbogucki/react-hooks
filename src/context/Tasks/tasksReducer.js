@@ -4,8 +4,8 @@ import {
   FETCH_TASKS_SUCCESS,
 } from './tasksTypes';
 
-const TasksReducer = (state, action) => {
-  switch (action.type) {
+const TasksReducer = (state, { type, payload }) => {
+  switch (type) {
     case FETCH_TASKS:
       return {
         ...state,
@@ -16,6 +16,7 @@ const TasksReducer = (state, action) => {
       return {
         ...state,
         loading: false,
+        tasks: payload.tasks,
       };
 
     case FETCH_TASKS_FAILURE:
@@ -23,6 +24,7 @@ const TasksReducer = (state, action) => {
         ...state,
         loading: false,
         tasks: [],
+        error: payload.error,
       };
 
     default:

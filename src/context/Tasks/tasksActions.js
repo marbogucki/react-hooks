@@ -4,18 +4,18 @@ import {
   FETCH_TASKS_SUCCESS,
 } from './tasksTypes';
 
-const fetchTasks = () => ({
+const fetchTasksAction = () => ({
   type: FETCH_TASKS,
 });
 
-const fetchTasksSuccess = (tasks) => ({
+const fetchTasksSuccessAction = (tasks) => ({
   type: FETCH_TASKS_SUCCESS,
   payload: { tasks },
 });
 
-const fetchTasksFailure = (error) => ({
+const fetchTasksFailureAction = (error) => ({
   type: FETCH_TASKS_FAILURE,
-  payload: { error },
+  payload: { error: error.message },
 });
 
-export { fetchTasks, fetchTasksSuccess, fetchTasksFailure };
+export { fetchTasksAction, fetchTasksSuccessAction, fetchTasksFailureAction };

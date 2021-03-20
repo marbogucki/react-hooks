@@ -1,11 +1,10 @@
-import React, { useContext } from 'react';
-import TasksContext from 'context/Tasks/tasksContext';
+import React, { Fragment } from 'react';
+import { TasksList } from 'components';
 
-const Tasks = () => {
-  const tasksState = useContext(TasksContext);
-  console.log(tasksState);
-
-  return <div>Tasks</div>;
-};
+const Tasks = () => (
+  <Fragment>
+    <TasksList />
+  </Fragment>
+);
 
 export { Tasks };

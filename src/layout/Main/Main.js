@@ -5,11 +5,12 @@ const Home = lazy(() => import('views/Home'));
 const Tasks = lazy(() => import('views/Tasks'));
 const NotFound = lazy(() => import('views/NotFound'));
 import TasksState from 'context/Tasks/tasksState';
+import { Spinner } from 'components/shared';
 
 const Main = () => {
   return (
     <main>
-      <Suspense fallback={<p>Loader...</p>}>
+      <Suspense fallback={<Spinner />}>
         <Switch>
           <Route exact path="/">
             <Home />
