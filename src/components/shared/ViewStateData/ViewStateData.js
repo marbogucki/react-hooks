@@ -4,8 +4,8 @@ import { ErrorMessage } from '../ErrorMessage';
 import { Spinner } from '../Spinner';
 import { ViewState, getViewState } from './getviewState';
 
-const ViewStateData = ({ state, data, errorMessage, children }) => {
-  const displayViews = getViewState({ ...state, data });
+const ViewStateData = ({ loading, data, error, errorMessage, children }) => {
+  const displayViews = getViewState({ loading, data, error });
 
   switch (displayViews) {
     case ViewState.LOADING:
@@ -23,11 +23,9 @@ const ViewStateData = ({ state, data, errorMessage, children }) => {
 };
 
 ViewStateData.propTypes = {
-  state: PropTypes.shape({
-    loading: PropTypes.bool,
-    error: PropTypes.string,
-  }),
-  data: PropTypes.array,
+  loading: PropTypes.bool.isRequired,
+  data: PropTypes.array.isRequired,
+  error: PropTypes.string.isRequired,
   errorMessage: PropTypes.string,
   children: PropTypes.node,
 };

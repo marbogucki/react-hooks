@@ -3,18 +3,14 @@ import React, { Fragment, useContext, useEffect } from 'react';
 import ViewStateData from 'components/shared/ViewStateData/ViewStateData';
 
 const TasksList = () => {
-  const { fetchTasks, tasks, ...state } = useContext(TasksContext);
+  const { loading, tasks, error, fetchTasks } = useContext(TasksContext);
 
   useEffect(() => {
     fetchTasks();
   }, []);
 
   return (
-    <ViewStateData
-      state={state}
-      data={tasks}
-      errorMessage="Error: Please try again"
-    >
+    <ViewStateData loading={loading} data={tasks} error={error}>
       {tasks && (
         <div>
           {tasks.map((task) => (
