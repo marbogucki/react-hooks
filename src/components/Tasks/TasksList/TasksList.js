@@ -1,6 +1,7 @@
 import TasksContext from 'context/Tasks/tasksContext';
-import React, { Fragment, useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import ViewStateData from 'components/shared/ViewStateData/ViewStateData';
+import Task from '../Task/Task';
 
 const TasksList = () => {
   const { loading, tasks, error, fetchTasks } = useContext(TasksContext);
@@ -12,13 +13,11 @@ const TasksList = () => {
   return (
     <ViewStateData loading={loading} data={tasks} error={error}>
       {tasks && (
-        <div>
+        <section id="tasks-list">
           {tasks.map((task) => (
-            <Fragment key={task.id}>
-              <h4>{task.textArea}</h4>
-            </Fragment>
+            <Task key={task.id} task={task} />
           ))}
-        </div>
+        </section>
       )}
     </ViewStateData>
   );

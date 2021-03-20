@@ -8,6 +8,9 @@ import {
   fetchTasksAction,
   fetchTasksSuccessAction,
   fetchTasksFailureAction,
+  removeTaskAction,
+  removeTaskSuccessAction,
+  removeTaskFailureAction,
 } from './tasksActions';
 
 const TasksState = ({ children }) => {
@@ -32,8 +35,23 @@ const TasksState = ({ children }) => {
     }
   };
 
+  // Remove Task
+  const removeTask = (taskId) => {
+    tasksDispatch(removeTaskAction(taskId));
+
+    try {
+      axios.delete(
+        // eslint-disable-next-line no-undef
+        `${process.env.REACT_APP_URL_API}/tasks/${taskId}`
+      );
+      tasksDispatch(removeTaskSuccessAction(taskId));
+    } catch (error) {
+      tasksDispatch(removeTaskFailureAction(error));
+    }
+  };
+
   return (
-    <TasksContext.Provider value={{ ...state, fetchTasks }}>
+    <TasksContext.Provider value={{ ...state, fetchTasks, removeTask }}>
       {children}
     </TasksContext.Provider>
   );

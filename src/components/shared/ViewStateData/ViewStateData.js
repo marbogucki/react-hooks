@@ -25,7 +25,7 @@ const ViewStateData = ({ loading, data, error, errorMessage, children }) => {
 ViewStateData.propTypes = {
   loading: PropTypes.bool.isRequired,
   data: PropTypes.array.isRequired,
-  error: PropTypes.string.isRequired,
+  error: PropTypes.string,
   errorMessage: PropTypes.string,
   children: PropTypes.node,
 };
