@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom';
-const About = lazy(() => import('views/About'));
+const HookForm = lazy(() => import('views/HookForm'));
 const Home = lazy(() => import('views/Home'));
 const Tasks = lazy(() => import('views/Tasks'));
 const NotFound = lazy(() => import('views/NotFound'));
@@ -16,8 +16,8 @@ const Main = () => {
             <Home />
           </Route>
 
-          <Route path="/about">
-            <About />
+          <Route path="/hook-form">
+            <HookForm />
           </Route>
 
           <Route path="/tasks">
